@@ -20,14 +20,14 @@ Gutter Width: 15px
 .border {
   padding-left: 7px;
   margin-left: 7px;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #c5c8c6;
 }
  
 /* Border with more whitespace, spans one column. */
 .colborder {
     padding-left: 42px;
   margin-left: 42px;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #c5c8c6;
 }
  
 
