@@ -91,37 +91,62 @@
       <!--END Header bar-->
 
 
-<!-- section Intro
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	
-      <section id="sectionIntro" class="parallax">
+<section id="sectionIntro">
+    <div class='console-container'>
+      <span id='text'>
+      </span>
+      <div class='console-underscore' id='console'>&#95;
+      </div>
+    </div>
 
-        <div class="container">
+    <script>
+      // function([string1, string2],target id,[color1,color2])    
+      consoleText(['welcome!', 'I\'m Zack Norman', 'studying CS at UofT', 'trained in Algorithms and ML', 'highly skilled ethical hacker', 'check out my portfolio!'], 'text',['#8c9440','#85678f','#5f819d', '#a54242', '#5e8d87', '#373b41']);
 
-          <div class="row">
+      function consoleText(words, id, colors) {
+        if (colors === undefined) colors = ['#fff'];
+        var visible = true;
+        var con = document.getElementById('console');
+        var letterCount = 1;
+        var x = 1;
+        var waiting = false;
+        var target = document.getElementById(id)
+        target.setAttribute('style', 'color:' + colors[0])
+        window.setInterval(function() {
 
-            <div class="col-md-6 col-sm-12 col-xs-12 banner">
-              <div class="textIntro">
-                <div class="hi">
-                <h1>Hi!</h1>
-                <p>
-                I'm a versatile software and network engineer. Want to get to know me better? Keep Scrolling!
-                </p>
-                <div class="introbtn">
-                  <a href="#sectionAbout"><span class="view">View Profile</span><span class="icon arrow_right"></span></a>
-                </div> 
-                <div class="introbtn">               
-                  <a class="easing" href="#sectionContact"><span class="view">Contact</span><span class="icon arrow_right"></span></a>
-                </div>
-                </div>
-              </div>
-            </div>
+          if (letterCount === 0 && waiting === false) {
+            waiting = true;
+            target.innerHTML = words[0].substring(0, letterCount)
+            window.setTimeout(function() {
+              var usedColor = colors.shift();
+              colors.push(usedColor);
+              var usedWord = words.shift();
+              words.push(usedWord);
+              x = 1;
+              target.setAttribute('style', 'color:' + colors[0])
+              letterCount += x;
+              waiting = false;
+            }, 0)
+          } else if (letterCount === words[0].length + 1 && waiting === false) {
+            waiting = true;
+            window.setTimeout(function() {
+              x = -1;
+              letterCount += x;
+              waiting = false;
+            }, 1500)
+          } else if (waiting === false) {
+            target.innerHTML = words[0].substring(0, letterCount)
+            letterCount += x;
+          }
+        }, 60)
+        window.setInterval(function() {
+            con.className = 'console-underscore'
 
-          </div>
-
-        </div>
-
-      </section>
+            visible = true;
+        }, 20)
+      }
+    </script>  
+  </section>
 
 
 <!-- section About
@@ -152,9 +177,6 @@
                     <span>Computer Science student</span>
                     <p></p>
                     <p></p> 
-
-	                <p>For every single project that I have done my focus has been on creating the best user experience possible. I've worked with several larger as well as smaller brands and I love challenges.</p>
-	                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor</p>
                   </div>
                 </div> 
               </div>
@@ -219,7 +241,7 @@
                     <div class="resumeContent">
                       <h5>University of Toronto</h5>
                       <h6><i class="fa fa-calendar"></i> 2017 - present</h6>
-                      <p>Studying Computer Science with a focus on Computer Vision, Statistics, and Genetic Algorithms. Currently maintaining a 4.0 GPA in third year Mathematical Statistics & Software Engineering whilst still in my second year. Also Minoring in Geomatics maintining a 4.0 in GGR272 Cartography.</p>
+                      <p>Studying Computer Science with a focus on Computer Vision, Statistics, and Genetic Algorithms. Currently maintaining a 4.0 GPA in upper year Mathematical Statistics & Software Engineering. Also Minoring in GIS / geomatics, maintining a 4.0 GPA in a Cartography course.</p>
                     </div>
                   </div>
                 </div>       
@@ -233,7 +255,7 @@
                     <div class="resumeContent">
                       <h5>Lorne Park Secondary School</h5>
                       <h6><i class="fa fa-calendar"></i> 2013-2017</h6>
-                      <p></p>
+                      <p>High school diploma recieved with honour standing. </p>
                     </div>
                   </div>
                 </div>      
