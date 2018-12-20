@@ -29,6 +29,43 @@ html{
 	src: url(../../fonts/ProFontWindows.ttf);
 }
 
+
+ /* pong
+ #left-paddle {
+	background-color: green;
+	left: 10px;
+}
+#right-paddle {
+	background-color: blue;
+	right: 10px;
+}
+.paddle {
+	top: 0;
+	height: 200px;
+	width: 10px;
+	position: absolute;
+}
+.ball {
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	border-radius: 10px;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+}
+.score {
+	position: absolute;
+	top: 0;
+}
+#left-score {
+	left: 10%;
+}
+#right-score {
+	right: 10%;
+} */
+
+
 .trail { /* className for the trail elements */
     position: absolute;
     height: 6px; width: 6px;
@@ -43,6 +80,9 @@ h1 {
 	border-right:4px solid #85678f;
 }
 
+img {
+	border-radius: 50%;
+}
 
 
 .hidden {
@@ -391,7 +431,7 @@ label.screen-reader-text {
 }
 
 .textIntro p{
-	font-family: 'Roboto Slab', sans-serif;
+	font-family: 'profont', sans-serif;
 	font-size: 16px;
 	text-align: left;
 	line-height: 30px;
@@ -469,6 +509,7 @@ label.screen-reader-text {
 }
 .sectionTitle span{
 	color: #85678F;
+	font-family: 'profont';
     margin-bottom: 10px;
     text-transform: uppercase;
     text-align: center;
@@ -505,13 +546,13 @@ label.screen-reader-text {
 	width: 100%;
 }
 .title h2 {
-	color: #dcdccc;
+	color: #c5c8c6;
     font-size: 50px;
     letter-spacing: 2px;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-family: 'profont';
+    font-style: normal;
     margin-top: 0px;    
-    border-bottom: 1px solid #0e121b;
+    border-bottom: 1px solid #5e8d87;
 }
 .title h2 span {
     opacity: 0.8;
@@ -520,11 +561,12 @@ label.screen-reader-text {
     text-transform: capitalize;
     font-style: normal;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'profont', sans-serif;
 }
 .title span {
     text-transform: uppercase;
-    font-size: 22px;
+	font-size: 22px;
+	font-family: 'profont';
     line-height: 37px;
     opacity: 0.8;
     color: #5e8d87;
@@ -532,7 +574,7 @@ label.screen-reader-text {
 .title p {
 	font-size: 14px;
     line-height: 24px;
-    font-family: "Muli", sans-serif;
+    font-family: "profont", sans-serif;
     color: #c5c8c6;
     letter-spacing: 0.04em;
     margin-bottom: 10px;
@@ -547,7 +589,7 @@ label.screen-reader-text {
 	text-transform: uppercase;
 }
 .about-infos p{
-	font-family: "Nunito", sans-serif;
+	font-family: "profont", sans-serif;
 	letter-spacing: 1px;
 	color:#c5c8c6;
 	font-size: 14px;
@@ -573,7 +615,7 @@ p.less-bottom{
 .about ul.info li {
     font-size: 14px;
     line-height: 24px;
-    font-family: "Muli", sans-serif;
+    font-family: "profont", sans-serif;
     color: #c5c8c6;
     letter-spacing: 0.04em;
     border-bottom: 1px solid #0e121b;
@@ -612,7 +654,7 @@ p.less-bottom{
   margin-bottom: 15px;
 }
 .story p{
-  font-family: "Nunito", sans-serif;
+  font-family: "profont", sans-serif;
   letter-spacing: 1px;
   color: #888;
   font-size: 14px;
@@ -722,7 +764,7 @@ p.less-bottom{
 	-moz-transition: all 0.3s ease-in-out;
 }
 .resumeContent h6{
-	font-family: 'Nunito', sans-serif;
+	font-family: 'profont', sans-serif;
 	font-size: 13px;
 	text-align: left;
 	line-height: 26px;
@@ -735,7 +777,7 @@ p.less-bottom{
 	text-align: center;	
 }
 .resumeContent p{
-	font-family: 'Nunito', sans-serif;
+	font-family: 'Roboto Slab', sans-serif;
 	font-size: 14px;
 	text-align: center;
 	line-height: 24px;
@@ -799,7 +841,7 @@ p.less-bottom{
     content: '';
 }
 .resume-left p{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'profont', sans-serif;
     font-size: 14px;    
     line-height: 24px;
     font-weight: 300;
@@ -807,7 +849,7 @@ p.less-bottom{
     color: #5e8d87;
 }
 .resume-right p{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'profont', sans-serif;
     font-size: 14px;
     text-align: left;
     line-height: 24px;
@@ -821,7 +863,7 @@ p.less-bottom{
 ---------------------------------------------------*/
 
 #sectionPortfolio{
-	padding-top:80px;
+	padding-top:0px;
 	padding-bottom: 80px;
 	background: #0e121b;
 }
@@ -831,7 +873,7 @@ p.less-bottom{
 	margin:0;
 	font-size: 12px;
 	font-weight: 300;
-	font-family: "Nunito", sans-serif;
+	font-family: "profont", sans-serif;
 	text-transform: uppercase;
 	color: #e5e5e5;
 	letter-spacing: 1px;
@@ -926,7 +968,7 @@ p.less-bottom{
 	bottom:5px;
 	left: 20px;
 	position: absolute;
-	font-family: 'Nunito', sans-serif;
+	font-family: 'profont', sans-serif;
 	font-size: 12px;
 	font-weight: 300;
 	letter-spacing: 1px;
@@ -963,7 +1005,7 @@ p.less-bottom{
 	margin-top: 0px;
 }
 .modal-box-content p {
-	font-family: 'Nunito', sans-serif;
+	font-family: 'profont', sans-serif;
 	font-size: 14px;
 	text-align: left;
 	line-height: 22px;
@@ -1005,11 +1047,11 @@ p.less-bottom{
     letter-spacing: 1px;
     color: #c5c8c6;
     font-weight: 700;
-    font-family: "Montserrat", sans-serif;
+    font-family: "profont", sans-serif;
     margin-bottom: 10px;
 }
 .servicesContent h6 {
-    font-family: 'Roboto Slab', sans-serif;
+    font-family: 'profont', sans-serif;
     font-size: 14px;
     line-height: 30px;
     font-weight: 400;
@@ -1018,7 +1060,7 @@ p.less-bottom{
     color: #5e8d87;
 }
 .servicesContent p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto Slab', sans-serif;
     font-size: 14px;
     text-align: center;
     line-height: 24px;
@@ -1040,7 +1082,7 @@ p.less-bottom{
     background-size: cover;
 }
 .sectionFacts h1{
-	font-family: "Montserrat", sans-serif;
+	font-family: "profont", sans-serif;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -1064,7 +1106,7 @@ p.less-bottom{
 	color:#c5c8c6;
 }
 .fact h5{
-	font-family: "Nunito", sans-serif;
+	font-family: "profont", sans-serif;
 	font-weight: 300;
 	color: #c5c8c6;
 	font-size: 14px;
@@ -1112,7 +1154,7 @@ p.less-bottom{
 	margin-bottom: 15px;
 }
 .blog-column h5{
-	font-family: 'Nunito', sans-serif;
+	font-family: 'profont', sans-serif;
 	font-size: 13px;
 	text-align: left;
 	line-height: 26px;
@@ -1190,7 +1232,7 @@ article .blog-column{
 	font-weight: 300;
 }
 .sectionContact p{
-	font-family: 'Roboto Slab', sans-serif;
+	font-family: 'profont', sans-serif;
 	font-size: 14px;
 	line-height: 30px;
 	font-weight: 400;
@@ -1382,7 +1424,7 @@ ul.errorMessages li {
 	font-weight: 300;
 	font-size: 14px;
 	letter-spacing: 1px;
-	font-family: "Nunito", sans-serif;
+	font-family: "profont", sans-serif;
 	padding: 30px 15px;
 	color:#c5c8c6;
 }
