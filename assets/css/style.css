@@ -80,9 +80,6 @@ h1 {
 	border-right:4px solid #85678f;
 }
 
-img {
-	border-radius: 50%;
-}
 
 
 .hidden {
@@ -351,7 +348,7 @@ label.screen-reader-text {
 .navbar li{display: inline-block;margin: 0 12px;}
 .navbar li a{
     font-weight: 700;
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: 1px;
     text-decoration: none;
     z-index: 999;
@@ -528,8 +525,8 @@ label.screen-reader-text {
 ---------------------------------------------------*/
 #sectionAbout{
 	background-color: #0e121b;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 50px;
+	padding-bottom: 0px;
 }
 
 .about-content{
@@ -544,6 +541,7 @@ label.screen-reader-text {
 }
 .about-image img {
 	width: 100%;
+	border-radius: 50%;	
 }
 .title h2 {
 	color: #c5c8c6;
@@ -574,7 +572,7 @@ label.screen-reader-text {
 .title p {
 	font-size: 14px;
     line-height: 24px;
-    font-family: "profont", sans-serif;
+    font-family: "Roboto Slab", sans-serif;
     color: #c5c8c6;
     letter-spacing: 0.04em;
     margin-bottom: 10px;
@@ -691,13 +689,13 @@ p.less-bottom{
 
 #sectionResume{
 	background: #0e121b;
-	padding-bottom: 80px;
-	padding-top: 80px;
+	padding-bottom: 50px;
+	padding-top: 50px;
 }
 #sectionEmployment{
 	background-color: #0e121b;
-	padding-bottom: 80px;
-	padding-top: 80px;
+	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
 .edContent{
@@ -864,7 +862,7 @@ p.less-bottom{
 
 #sectionPortfolio{
 	padding-top:0px;
-	padding-bottom: 80px;
+	padding-bottom: 0px;
 	background: #0e121b;
 }
 .filters li {
@@ -897,7 +895,9 @@ p.less-bottom{
 }
 .mGrid img{
 	width: 100%;
+	max-width: 200px;
 	height: 100%;
+	max-height: 200px;
 	transition: all 0.15s ease-in-out;
 	-webkit-transition: all 0.15s ease-in-out;
 	-moz-transition: all 0.15s ease-in-out;
@@ -1032,8 +1032,8 @@ p.less-bottom{
 ---------------------------------------------------*/
 #sectionServices{
 	background-color: #0e121b;
-	padding-top:80px;
-	padding-bottom: 80px;
+	padding-top:20px;
+	padding-bottom: 20px;
 }
 .servicesRow {
 	margin-top: 50px;
