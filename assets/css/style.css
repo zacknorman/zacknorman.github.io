@@ -663,7 +663,7 @@ p.less-bottom{
 
 .skills h5{
   font-family: "profont", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 1px;
   color:#c5c8c6;
@@ -752,11 +752,12 @@ p.less-bottom{
 	font-weight: 800;
 	font-family: "profont", sans-serif;
 	color:#c5c8c6;	
-	font-size: 14px;
+	font-size: 18px;
 }
 .resumeContent h5 b.place{
 	color: #5e8d87;
 	margin-left: 2px;
+	font-size: 18px;
 	transition: all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -799,14 +800,16 @@ p.less-bottom{
     font-weight: 800;
     font-family: "profont", sans-serif;
     color: #c5c8c6;
-    font-size: 14px;
+	font-size: 18px;
 }
 .resume-left{
   text-align: right;
   padding-right: 130px;
+  font-size: 18px;
 }
 .resume-right:before{
   background-color: #5e8d87;
+  font-size: 18px;
   opacity: .5;
     content: '';
     height: calc(100% + 48px);
@@ -819,6 +822,7 @@ p.less-bottom{
   height: calc(100% - 30px);
 }
 .resume-right h5:before{
+	font-size: 18px;
   width: 16px;
     height: 16px;
     border-radius: 100%;
@@ -829,6 +833,7 @@ p.less-bottom{
     content: '';
 }
 .first-right h5:before{
+	font-size: 18px;
   width: 16px;
     height: 16px;
     border-radius: 100%;
@@ -840,7 +845,7 @@ p.less-bottom{
 }
 .resume-left p{
     font-family: 'profont', sans-serif;
-    font-size: 14px;    
+	font-size: 18px;
     line-height: 24px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -848,7 +853,7 @@ p.less-bottom{
 }
 .resume-right p{
     font-family: 'profont', sans-serif;
-    font-size: 14px;
+	font-size: 18px;
     text-align: left;
     line-height: 24px;
     font-weight: 300;
@@ -1052,7 +1057,7 @@ p.less-bottom{
 }
 .servicesContent h6 {
     font-family: 'profont', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 30px;
     font-weight: 400;
     font-style: italic;
