@@ -30,11 +30,13 @@ html{
 }
 
 #note {
+	font-family:profont;
+	font-size:2em;
     position: absolute;
     z-index: 101;
     top: 0;
     left: 0;
-    right: 0;
+	right: 0;
     background: #0e121b;
     text-align: center;
     line-height: 2.5;
