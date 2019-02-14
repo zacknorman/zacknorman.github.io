@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Page title
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	  <title>My Portfolio</title>
+	  <title>Ordering Page</title>
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600italic,600,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=profont:400,300,700' rel='stylesheet' type='text/css'>
@@ -33,6 +33,7 @@
 <!-- Body Start
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 <body>
+
     
   <!-- Loader
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -40,8 +41,201 @@
     <div id="loaderInner"></div>
   </div>
 
+  <style style="text/css">
+.body {
+  margin: 0px;
+  color: #fff;
+  width: 100%;
+}
+.h1 {
+    font-size: 3em;
+    color: #bda131;
+}
+.wrap {
+  margin: 0px auto;
+  width: 486px;
+}
 
+.box {
+  width: 100%;
+  height: 100%;
+  float: left;
+  background: #cccccc;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+.custom {
+    text-align: center;
+    margin: 20px;
+    color: #9f3f3f;
+    font-size: 2em;
+    font-family: profont;
+}
+.Rcustom {
+    text-align: center;
+    margin: 20px;
+    color: #9f3f3f;
+    font-size: 2em;
+    font-family: profont;
+}
 
+.text {
+  text-align: center;
+  margin-top: 40px;
+  color: #0e2f18;
+  font-size: 2em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+.bounce {
+  animation-name: bounce;
+}
+
+@keyframes flash {
+  0%, 50%, 100% {opacity: 1;}
+  25%, 75% {opacity: 0;}
+}
+.flash {
+  animation-name: flash;
+}
+
+@keyframes pulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+.pulse {
+  animation-name: pulse;
+  animation-duration: 1s;
+}
+
+@keyframes rubberBand {
+  0% {transform: scale(1);}
+  30% {transform: scaleX(1.25) scaleY(0.75);}
+  40% {transform: scaleX(0.75) scaleY(1.25);}
+  60% {transform: scaleX(1.15) scaleY(0.85);}
+  100% {transform: scale(1);}
+}
+.rubberBand {
+  animation-name: rubberBand;
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+.shake {
+  animation-name: shake;
+}
+
+@keyframes swing {
+  20% {transform: rotate(15deg);}
+  40% {transform: rotate(-10deg);}
+  60% {transform: rotate(5deg);}
+  80% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
+}
+.swing {
+  transform-origin: top center;
+  animation-name: swing;
+}
+
+@keyframes wobble {
+  0% {transform: translateX(0%);}
+  15% {transform: translateX(-25%) rotate(-5deg);}
+  30% {transform: translateX(20%) rotate(3deg);}
+  45% {transform: translateX(-15%) rotate(-3deg);}
+  60% {transform: translateX(10%) rotate(2deg);}
+  75% {transform: translateX(-5%) rotate(-1deg);}
+  100% {transform: translateX(0%);}
+}
+.wobble {
+  animation-name: wobble;
+}
+
+@keyframes flip {
+  0% {transform: perspective(400px) translateZ(0) rotateY(0) scale(1);animation-timing-function: ease-out;}
+  40% {transform: perspective(400px) translateZ(150px) rotateY(170deg) scale(1);animation-timing-function: ease-out;}
+  50% {transform: perspective(400px) translateZ(150px) rotateY(190deg) scale(1);animation-timing-function: ease-in;}
+  80% {transform: perspective(400px) translateZ(0) rotateY(360deg) scale(.95);animation-timing-function: ease-in;}
+  100% {transform: perspective(400px) translateZ(0) rotateY(360deg) scale(1);animation-timing-function: ease-in;}
+}
+.animated.flip {
+  backface-visibility: visible;
+  animation-name: flip;
+}
+
+@keyframes lightSpeedIn {
+  0% {transform: translateX(100%) skewX(-30deg);opacity: 0;}
+  60% {transform: translateX(-20%) skewX(30deg);opacity: 1;}
+  80% {transform: translateX(0%) skewX(-15deg);opacity: 1;}
+  100% {transform: translateX(0%) skewX(0deg);opacity: 1;}
+}
+.lightSpeedIn {
+  animation-name: lightSpeedIn;
+  animation-timing-function: ease-out;
+}
+
+@keyframes rollIn {
+  0% {opacity: 0;transform: translateX(-100%) rotate(-120deg);}
+  100% {opacity: 1;transform: translateX(0px) rotate(0deg);}
+}
+.rollIn {
+  animation-name: rollIn;
+}
+
+@keyframes rotateIn {
+  0% {transform-origin: center center;transform: rotate(-200deg);opacity: 0;}
+  100% {transform-origin: center center;transform: rotate(0);opacity: 1;}
+}
+.rotateIn {
+  animation-name: rotateIn;
+}
+
+@keyframes hinge {
+  0% {transform: rotate(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+  20%, 60% {transform: rotate(80deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+  40% {transform: rotate(60deg);transform-origin: top left;animation-timing-function: ease-in-out;}
+  80% {transform: rotate(60deg) translateY(0);transform-origin: top left;animation-timing-function: ease-in-out;}
+  100% {transform: translateY(700px);}
+}
+.hinge {
+  margin: 20px;
+  animation-name: hinge;
+}
+
+@media all and (max-width: 680px) {
+  .wrap {
+   width: 100%;
+  }
+  .box {
+    width: 100%;
+  height: 55px;
+    clear: both;
+    margin: 0px auto;
+  }
+  .text {
+   margin-top: 20px; 
+  }
+  .hingebox, .flipbox {
+     display: none; 
+  }
+}    </style>
+    
+    
 
 
 
@@ -50,29 +244,47 @@
   <footer class="pFooter">
 
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12 fCopy">
-        made with passion by Zack Norman and Github.
-        </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-12 fIcons">
-        <a href="https://facebook.com/zacknorman54">
-        <span aria-hidden="true" class="social_facebook_circle"></span>
-        </a>
-        <a href="https://twitter.com/yam_zack">
-        <span aria-hidden="true" class="social_twitter_circle"></span>
-        </a>
-        <a href="#">
-        <span aria-hidden="true" class="social_dribbble_circle"></span>
-        </a>
-        <a href="https://instagram.com/yam.zack">
-        <span aria-hidden="true" class="social_instagram_circle"></span>
-        </a>
-        </div>
+        <center>
+        <div class="h1">
+            portfolio by zack.
       </div>
+    </center>
     </div>
 
 </footer>
+        <div class="box">
+          <div class="container">
+                <center>
+                <div class="text animated pulse">! Currently accepting new clients !</div>
+                <div class="p">&nbsp;&nbsp;</div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/w_Uu1rxWanQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          
+                <div class="p"> 
+                        &nbsp;&nbsp;
+                </div>
+
+                <div class="p">
+            It's hard enough getting recognized as it is nowadays - everyone has a degree and communication skills. An online resume or portfolio is a proven unique and creative way to make you stand out in the crowd to any employer.
+              If you're someone like me, the toughest part of getting a good job is the process of securing an interview. A colourful online portfolio is guarenteed to get your "foot in the door" of companies who have piles of resumes to sift through.
+              The fact that you have documented proof of your hard and soft skills in an aesthetically pleasing webpage shows your commitment to your profession or area of study.
+              Companies pick up on this and will offer you interviews for generally high-paying internship opportunities.
+              It is up to you to ace the interview from there.
+          </div>
+          <div class="p"> 
+                &nbsp;&nbsp; 
+            </div>
+
+          </center>
+        </div>
+        </div>
+        <div class="custom">
+            !Reading Week Sale on until this SUNDAY FEB 24th! Starting at $249.99 CAD
+        </div>
+        <div class="Rcustom">
+            <a href="mailto:zachary.norman@mail.utoronto.ca">Click to book your spot in 5 minutes</a>
+        </div>
+        
+
 
 <!--  Javascripts
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
