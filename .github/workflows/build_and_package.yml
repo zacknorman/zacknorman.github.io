@@ -1,0 +1,79 @@
+name: Build site and contact binary
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install and build Eleventy
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+
+      - name: Setup Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
+
+      - name: Build Go contact binary (native)
+        run: |
+          mkdir -p bin
+          go build -o bin/contact tools/contact/main.go
+
+      - name: Upload binary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: contact-binary
+          path: bin/contact
+
+      - name: Verify built site and contact endpoint
+        run: |
+          # Serve the static site in background
+          python3 -m http.server 8000 --directory _site >/tmp/site.log 2>&1 &
+          SITE_PID=$!
+          sleep 1
+          # Check site root is reachable
+          curl -fS http://localhost:8000/ > /tmp/site_index || (cat /tmp/site.log && exit 1)
+
+          # Run contact binary in background
+          PORT=8080 ./bin/contact >/tmp/contact.log 2>&1 &
+          CONTACT_PID=$!
+          sleep 1
+
+          # Send test POST to contact endpoint
+          RESPONSE=$(curl -s -X POST http://localhost:8080/contact -H "Content-Type: application/json" -d '{"name":"ci","email":"ci@example.com","message":"test"}') || true
+          echo "$RESPONSE" > /tmp/contact_response
+          # Expect JSON with a "message" key (either "sent" or "logged")
+          echo "$RESPONSE" | grep -q 'message' || (cat /tmp/contact.log && cat /tmp/contact_response && exit 1)
+
+          # Cleanup
+          kill $SITE_PID || true
+          kill $CONTACT_PID || true
+
+      # Optional: deploy via rsync to a VPS (requires secrets: SSH_PRIVATE_KEY, REMOTE_HOST, REMOTE_USER, REMOTE_PATH)
+      # - name: Deploy to VPS
+      #   if: false
+      #   env:
+      #     REMOTE_USER: ${{ secrets.REMOTE_USER }}
+      #     REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+      #     REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     rsync -avz --delete _site/ $REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH

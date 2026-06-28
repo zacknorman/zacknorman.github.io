@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{% if title %}{{ title }} - {% endif %}Zack Norman</title>
+    <link rel="stylesheet" href="https://unpkg.com/pico.css@1.*/css/pico.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    {% include "partials/header.njk" %}
+
+    <main class="container">
+      {{ content | safe }}
+    </main>
+
+    {% include "partials/footer.njk" %}
+
+    <script src="/assets/js/header.js" defer></script>
+    <script src="/assets/js/contact.js" defer></script>
+  </body>
+</html>
